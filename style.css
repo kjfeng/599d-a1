@@ -8,7 +8,7 @@
 }
 
 body {
-    margin: 5rem 0 5rem 0;
+    margin: 5rem 0 0 0;
 }
 
 h1 {
@@ -27,17 +27,18 @@ h6 {
 /* figures */
 figure {
     margin: auto;
+    margin-bottom: 2rem;
 }
 
 figure img {
     width: 100%;
     display: block;
     margin: auto;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 0px 10px 0px;
 }
 
 figure figcaption {
-    font-size: 10px;
+    font-size: 12px;
     font-style: italic;
     color: rgb(128, 124, 124);
     margin: auto;
@@ -78,5 +79,45 @@ figure figcaption {
 
 img {
     text-align: center;
-    max-width: 100%;
+    /* max-width: 100%; */
+}
+
+select {
+    display: none !important;
+}
+
+#bib-sec-001 {
+    margin-top: 2rem;
+}
+
+.refs {
+    padding: 0.1rem 0 5rem 0;
+    background-color: #eee;
+    /* padding-bottom: 5rem; */
+}
+
+.main-body {
+    padding-bottom: 1rem;
+}
+
+h3 {
+    margin-top: 2rem;
+}
+
+button p {
+    color: #000;
+}
+
+aside {
+    width: 20rem;
+    margin: 0 -22rem 0 0;
+    padding: 0 1rem 0 1rem;
+    float: right;
+    color: #888;
+    font-size: 14px;
+}
+
+.fn-img {
+    padding: 0 !important;
+    width: 100% !important;
 }

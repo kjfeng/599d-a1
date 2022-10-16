@@ -7,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="main.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <!-- <link rel="stylesheet" href="main.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://code.jquery.com/color/jquery.color-2.2.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="bibCit.js"></script>
+  <script src="scripts.js"></script>
 </head>
 
 <body>
 
-<div class="container col-lg-6">
+<div class="col-lg-6 offset-lg-2 main-body">
   <h1>Stamper: An Artboard-Oriented Creative Coding Environment</h1>
   <!-- <h6>CHI EA '20: Extended Abstracts of the 2020 CHI Conference on Human Factors in Computing Systems. April 2020. Pages 1–9. <a href="https://doi.org/10.1145/3334480.3382994">https://doi.org/10.1145/3334480.3382994</a>.
   </h6> -->
@@ -49,38 +50,75 @@
   <!-- intro section -->
   <section>
     <h3>Introduction</h3>
-    <p>Creative practice often involves “reviews” or “pin-ups” where the spatial arrangement of ideas on finite Artboards1 is employed to make comparisons, draw conclusions and tell stories (Figure 4). Using Artboards affords the exploration of ideas in a light and fast way because it's easy to try small modifications while still having the prior work in the periphery. Another benefit is that once one has a few boards, they can be strung together into a storyboard <span class="citation" id="1"></span>. Moreover, as boards start piling up, the juxtapositions between them becomes a source of ideas itself.</p>
+
+    <aside class="fn1"><sup>1</sup>Sometimes known as ‘Thumbnail Sketches’ or ‘Panels’</aside>
+
+    <aside style="margin-top: 70px" class="fn-img4"> 
+      <figure>
+      <img class="fn-img" src="./image4.jpeg"/>
+      <figcaption>Figure 4. Design practice frequently involves the arrangement of Artboards to compare, juxtapose, and develop ideas</figcaption>
+      </figure>
+    </aside>
+
+    <p>Creative practice often involves “reviews” or “pin-ups” where the spatial arrangement of ideas on finite Artboards<a class="fn" id="fn1" href=""><sup>1</sup></a> is employed to make comparisons, draw conclusions and tell stories (<a href="" class="fn-img" id="fn-img4">Figure 4</a>). Using Artboards affords the exploration of ideas in a light and fast way because it's easy to try small modifications while still having the prior work in the periphery. Another benefit is that once one has a few boards, they can be strung together into a storyboard <span class="citation" id="1"></span>. Moreover, as boards start piling up, the juxtapositions between them becomes a source of ideas itself.</p>
   
     <p>Early design tools for computers utilized the metaphors of ‘Pages’ and ‘Layers <span class="citation" id="2"></span>, but Artboard-Oriented tools (Figure 5) have become increasingly dominant over the last decade.</p>
-  
-    <p>As computing has become pervasive, “sketching with code” has become a practice among artists and designers <span class="citation" id="3"></span>, however, the programming environments being used in these practices, like Processing, do not have Artboards. Instead, they employ the 3-Part IDE Archetype of ‘instructions-box’, ‘console’ and a singular ‘graphics canvas’ (Figures 1-3).</p>
 
-    <figure>
-      <img src="./image1.png"/>
-      <figcaption>Figure 1. Design By Numbers; 1999</figcaption>
-    </figure>
-  
-    <figure>
-      <img src="./image2.png"/>
-      <figcaption>Figure 2. Processing Development Environment; 2003</figcaption>
-    </figure>
-  
-    <figure>
-      <img src="./image3.png"/>
-      <figcaption>Figure 3. p5.js Web Editor in Safari; 2019</figcaption>
-    </figure>
-  
-    <figure>
-      <img src="./image4.jpeg"/>
-      <figcaption>Figure 4. Design practice frequently involves the arrangement of Artboards to compare, juxtapose, and develop ideas</figcaption>
-    </figure>
-  
     <figure>
       <img src="./image5.png"/>
       <figcaption>Figure 5. Bohemian Coding's Sketch is an example of Artboard-Oriented design software. (A) Artboard (B) scrollable zooming canvas (C) object-list for the Artboard labeled A</figcaption>
     </figure>
+
+    <aside class="fn-img1"> 
+      <figure>
+      <img class="fn-img" src="./image1.png"/>
+      <figcaption>Figure 1. Design By Numbers; 1999</figcaption>
+      </figure>
+    </aside>
+
+    <aside style="margin-top: 220px" class="fn-img2"> 
+      <figure>
+      <img class="fn-img" src="./image2.png"/>
+      <figcaption>Figure 2. Processing Development Environment; 2003</figcaption>
+      </figure>
+    </aside>
+
+    <aside style="margin-top: 460px" class="fn-img3"> 
+      <figure>
+      <img class="fn-img" src="./image3.png"/>
+      <figcaption>Figure 3. p5.js Web Editor in Safari; 2019</figcaption>
+      </figure>
+    </aside>
   
-    <p>Though significant research has been conducted into Visual Programming Languages (VPLs) <span class="citation" id="4"></span>. much of that effort has been focused on developing novel languages for the ‘instructions-box’ portion of the UI <span class="citation" id="5"></span>. There is an opportunity for an alternative direction which tackles the 3-part UI archetype in programming environments while relying on existing systems for entering instructions. Our hypothesis is that for Creative Coding, many arbitrarily rearrangeable canvases is better than one.</p> 
+    <p>As computing has become pervasive, “sketching with code” has become a practice among artists and designers <span class="citation" id="3"></span>, however, the programming environments being used in these practices, like Processing, do not have Artboards. Instead, they employ the 3-Part IDE Archetype of ‘instructions-box’, ‘console’ and a singular ‘graphics canvas’ (Figures <a href="" class="fn-img" id="fn-img1">1</a>, <a href="" class="fn-img" id="fn-img2">2</a>, <a href="" class="fn-img" id="fn-img3">3</a>).</p>
+
+    
+
+    <!-- <figure>
+      <img src="./image1.png"/ style="width: 500px !important">
+      <figcaption>Figure 1. Design By Numbers; 1999</figcaption>
+    </figure> -->
+  
+    <!-- <figure>
+      <img src="./image2.png"/>
+      <figcaption>Figure 2. Processing Development Environment; 2003</figcaption>
+    </figure> -->
+  
+    <!-- <figure>
+      <img src="./image3.png"/>
+      <figcaption>Figure 3. p5.js Web Editor in Safari; 2019</figcaption>
+    </figure> -->
+
+
+  
+    <!-- <figure>
+      <img src="./image4.jpeg"/>
+      <figcaption>Figure 4. Design practice frequently involves the arrangement of Artboards to compare, juxtapose, and develop ideas</figcaption>
+    </figure> -->
+
+  
+    <p>Though significant research has been conducted into Visual Programming Languages (VPLs) <span class="citation" id="4"></span>. much of that effort has been focused on developing novel languages for the ‘instructions-box’ portion of the UI <span class="citation" id="5"></span>. There is an opportunity for an alternative direction which tackles the 3-part UI archetype in programming environments while relying on existing systems for entering instructions. Our hypothesis is that for Creative Coding, many arbitrarily rearrangeable canvases is better than one.</p>
+    
 
   </section>
 
@@ -90,32 +128,53 @@
   <section>
     <h3>Background</h3>
     <div>
-      <h4>‘Arts-Engineering Toolkits’</h4>
+      <h5>‘Arts-Engineering Toolkits’</h5>
       <p>1999, John Maeda created Design By Numbers (DBN) <span class="citation" id="8"></span> which subsequently morphed into Processing <span class="citation" id="9"></span> and laid the foundation for the contemporary “Creative Coding” movement <span class="citation" id="10"></span>. Over the successive two decades, Processing <span class="citation" id="11"></span> and later p5.js accumulated functionality and were nurtured with educational content <span class="citation" id="12"></span>. However, in terms of UI, none of DBN's descendants (e.g. Processing Development Environment <span class="citation" id="13"></span>, p5.js Desktop Editor <span class="citation" id="14"></span>, p5.js Web Editor <span class="citation" id="15"></span>) have advanced meaningfully beyond it.</p> 
 
-      <h4>Zooming UIs and Artboard-Oriented tools</h4>
-      <p>Research into zooming user interfaces largely began at the MIT Architecture Machine Group in the late 1970s with ‘Dataland’ <span class="citation" id="18"></span> and was later advanced throughout the 1990s <span class="citation" id="19"></span><span class="citation" id="20"></span>. As early as 1994, Aldus Freehand 4 had support for multiple arbitrarily arranged pages to be positioned on a scrollable zoomable ‘Pasteboard’ surface <span class="citation" id="16"></span>. In 2008, Adobe Illustrator CS4 added support for multiple Artboards within a single document on a scrollable zoomable canvas <span class="citation" id="21"></span>. In 2009, Prezi introduced a radical super-zoom canvas metaphor <span class="citation" id="22"></span>. A year later, Sketch was released with an ‘infinite canvas’ and pages; ‘Illustrator-style’ (Figure 6) Artboards were added with version 2.0 in 2012. Sketch 3, released in 2014, introduced ‘Sketch Style’ (Figure 7) Artboards — this was a major ergonomic change which shifted the metaphor from one global canvas with selections to many independent canvases, allowing practitioners to manage complex projects with many artboards. By 2015, Sketch was the most popular tool for ‘Wireframing’ and ‘Interface Design’ among software designers <span class="citation" id="24"></span>. Adobe rushed to add Artboards to Photoshop <span class="citation" id="23"></span> and introduce new Artboard-Oriented tools <span class="citation" id="25"></span>. In 2016, V1 of Figma launched with ‘Sketch Style’ Artboards from the get-go.</p>
+      <aside style="margin-top: 300px" class="fn-img6"> 
+        <figure>
+        <img class="fn-img" src="./image6.png"/>
+        <figcaption>Figure 6. ‘Illustrator Style’ Artboards act as ‘cropping-rectangles’ on top of the canvas but do not affect the organization of objects in the layer-list.</figcaption>
+        </figure>
+      </aside>
+
+      <aside style="margin-top: 570px" class="fn-img7"> 
+        <figure>
+        <img class="fn-img" src="./image7.png"/>
+        <figcaption>Figure 7. ‘Sketch Style’ Artboards are represented as containers in the layer-list, creating a ‘separation of concerns’; nesting objects by their position on the canvas.</figcaption>
+        </figure>
+      </aside>
+
+      <h5>Zooming UIs and Artboard-Oriented tools</h5>
+
+      <p>Research into zooming user interfaces largely began at the MIT Architecture Machine Group in the late 1970s with ‘Dataland’ <span class="citation" id="18"></span> and was later advanced throughout the 1990s <span class="citation" id="19"></span><span class="citation" id="20"></span>. As early as 1994, Aldus Freehand 4 had support for multiple arbitrarily arranged pages to be positioned on a scrollable zoomable ‘Pasteboard’ surface <span class="citation" id="16"></span>. In 2008, Adobe Illustrator CS4 added support for multiple Artboards within a single document on a scrollable zoomable canvas <span class="citation" id="21"></span>. In 2009, Prezi introduced a radical super-zoom canvas metaphor <span class="citation" id="22"></span>. A year later, Sketch was released with an ‘infinite canvas’ and pages; ‘Illustrator-style’ (<a href="" class="fn-img" id="fn-img6">Figure 6</a>) Artboards were added with version 2.0 in 2012. Sketch 3, released in 2014, introduced ‘Sketch Style’ (<a href="" class="fn-img" id="fn-img7">Figure 7</a>) Artboards — this was a major ergonomic change which shifted the metaphor from one global canvas with selections to many independent canvases, allowing practitioners to manage complex projects with many artboards. By 2015, Sketch was the most popular tool for ‘Wireframing’ and ‘Interface Design’ among software designers <span class="citation" id="24"></span>. Adobe rushed to add Artboards to Photoshop <span class="citation" id="23"></span> and introduce new Artboard-Oriented tools <span class="citation" id="25"></span>. In 2016, V1 of Figma launched with ‘Sketch Style’ Artboards from the get-go.</p>
+
       
-      <h4>Structure Editor</h4>
+      
+      <h5>Structure Editor</h5>
+
       <p>Though there are many varieties, and a review of them is beyond the scope of this paper, all ‘structured editing’ involves moving away from plain-text programming in some way. Two common types of structure editors are those that structure the individual instruction-input by replacing character-editing with block-editing [28] and those that structure function-level organization by bucketing functions into defined visual regions [26][29].
         Because these histories have yet to converge, we see an opportunity to do so by embedding the Arts-Engineering Toolkit p5.js within a new kind of editor that is modeled after the interaction paradigms exhibited in Artboard-Oriented WYSIWYG design software.</p>
+
+        
     </div>
   </section>
 
-  <figure>
+  <!-- <figure>
     <img src="./image6.png"/>
     <figcaption>Figure 6. ‘Illustrator Style’ Artboards act as ‘cropping-rectangles’ on top of the canvas but do not affect the organization of objects in the layer-list.</figcaption>
-  </figure>
+  </figure> -->
 
-  <figure>
+  <!-- <figure>
     <img src="./image7.png"/>
     <figcaption>Figure 7. ‘Sketch Style’ Artboards are represented as containers in the layer-list, creating a ‘separation of concerns’; nesting objects by their position on the canvas.</figcaption>
-  </figure>
+  </figure> -->
 
   <section>
-    <h3>Desigining for Creativity</h3>
+    <h3>Designing for Creativity</h3>
+    
     <p>
-      The creative process is often non-linear. In contrast to software professionals, who are trained to start coding with a preconceived idea of the correct answer [35], creative practitioners tend to explore many different options [17], draw inspiration from loosely connected ideas [6], and think through making. In outlining design principles for creative tools, Resnick et al. highlight the importance of supporting exploration. Furthermore, they discuss creating tools which, like ‘paper and pencil’, facilitate creative reflection, and the two-dimensional spatial positioning essential for gathering thoughts [33]. Prior research has explored the need to apply these ideas to software design [31] [32] and to programming tools [36], however we are the first to argue that the Artboard-Oriented paradigm of WYSIWYG design software be adapted to programming environments as a means of doing so.
+      The creative process is often non-linear. In contrast to software professionals, who are trained to start coding with a preconceived idea of the correct answer <span class="citation" id="35"></span>, creative practitioners tend to explore many different options <span class="citation" id="17"></span>, draw inspiration from loosely connected ideas <span class="citation" id="6"></span>, and think through making. In outlining design principles for creative tools, Resnick et al. highlight the importance of supporting exploration. Furthermore, they discuss creating tools which, like ‘paper and pencil’, facilitate creative reflection, and the two-dimensional spatial positioning essential for gathering thoughts <span class="citation" id="33"></span>. Prior research has explored the need to apply these ideas to software design <span class="citation" id="31"></span><span class="citation" id="32"></span> and to programming tools <span class="citation" id="36"></span>, however we are the first to argue that the Artboard-Oriented paradigm of WYSIWYG design software be adapted to programming environments as a means of doing so.
     </p>
   </section>
 
@@ -131,8 +190,12 @@
       <img src="./image8.png"/>
       <figcaption>Figure 8. Anatomy of a Function Stamp: Function name field, optional parameters field, instructions box, Graphics Frame. Both the overall Stamp and Graphics Frame can be resized.</figcaption>
     </figure>
+
+    <aside class="fn2"><sup>2</sup>Programs are referred to as ‘Sketches’ in Processing and p5.js</aside>
     
-    <p>In a typical p5.js editor, the author only has a single graphics frame available to them while editing any one program2 . If a p5.js program only uses the draw() function, there is a clear 1:1 mapping3 between it and the visual output. However, once a user begins to use abstractions like helper functions, an invisible world–never witnessed directly–begins to emerge.</p>
+    <p>In a typical p5.js editor, the author only has a single graphics frame available to them while editing any one program<a class="fn" id="fn2" href=""><sup>2</sup></a>. If a p5.js program only uses the draw() function, there is a clear 1:1 mapping<a class="fn" id="fn3" href=""><sup>3</sup></a> between it and the visual output. However, once a user begins to use abstractions like helper functions, an invisible world–never witnessed directly–begins to emerge.</p>
+
+    <aside class="fn3"><sup>3</sup>DBN reified this 1:1 mapping by eschewing functions entirely. All visual output was directly beside the code which specified it.</aside>
 
     <p>In Stamper, we uncloak this invisible world by giving every function its own graphics frame. This design has multiple advantages:
       <ul>
@@ -167,12 +230,20 @@
 
     <figure>
       <img src="./image11.png"/>
-      <figcaption>Figure 11. Similarly to in other design software, Stamper allows spatial-object duplication [34]</figcaption>
+      <figcaption>Figure 11. Similarly to in other design software, Stamper allows spatial-object duplication <span class="citation" id="34"></span></figcaption>
     </figure>
 
     <p>All this said, Stamper is only an editor, projects created within it can be used with any other p5.js editor and vice versa. When the desktop Stamper App is used, we add a <i>meta.stamper</i> file to the project folder to persist Stamp structure (i.e. size and position on canvas) across sessions.</p>
 
-    <p>Stamper's interface was designed with the goal of making Creative Coding more accessible to those with ‘concrete/bricolage’ cognitive styles <span class="citation" id="7"></span> which are common in the creative industries <span class="citation" id="33">. Moreover, these benefits are available without breaking compatibility with the existing p5.js library and its ecosystem; a typical limitation faced by new environments with similar goals.</p>
+    <aside>
+      <p><b>How p5.js Works</b><br>p5.js programs have two essential functions: setup() and draw()</p>
+      <p>“The setup() function is called once when the program starts. It's used to define initial environment properties such as screen size and background color” <span class="citation" id="37"></p>
+      <p>Draw() is “called directly after setup()” and “continuously executes the lines of code contained inside its block until the program is stopped” <span class="citation" id="38"></p>
+    </aside>
+
+    <p>Stamper's interface was designed with the goal of making Creative Coding more accessible to those with ‘concrete/bricolage’ cognitive styles <span class="citation" id="7"></span> which are common in the creative industries <span class="citation" id="33"></span>. Moreover, these benefits are available without breaking compatibility with the existing p5.js library and its ecosystem; a typical limitation faced by new environments with similar goals.</p>
+
+    
   
   </section>
 
@@ -187,7 +258,9 @@
 
       P3, a former design student who now works as creative technologist, said about his day-to-day work “The issue of working through the keyhole [is] a problem all the time, I'm always looking at the console”. Along the same vein, P5, a former engineering and art student, said of Stamper that it “allows [her] to see the visuals that are generated by specific bits of code instead of everything at the same time”.
 
-      P2 expected Stamper to become tedious if they called one function in many places and then later had to change it because “I would have to go find all those other places”.4 Another problem that was uniformly highlighted was performance, with every interviewee emphasizing that Stamper was irritatingly slow.
+      <aside class="fn4"><sup>4</sup>Note that our interviews were conducted before we added dependency visualizing lines, which may alleviate P2’s concern.</aside>
+
+      P2 expected Stamper to become tedious if they called one function in many places and then later had to change it because “I would have to go find all those other places”.<a class="fn" id="fn4" href=""><sup>4</sup></a> Another problem that was uniformly highlighted was performance, with every interviewee emphasizing that Stamper was irritatingly slow.
     </p>
   </section>
 
@@ -202,10 +275,10 @@
 
   <section>
     <h3>Acknowledgements</h3>
-    <p>
-      We never would have arrived at these ideas if not for the multi-disciplinary educations we received at Carnegie Mellon and for the extra-intuitional instruction and advisement we received from across campus.
+    <p>We never would have arrived at these ideas if not for the multi-disciplinary educations we received at Carnegie Mellon and for the extra-intuitional instruction and advisement we received from across campus.</p>
+    <p>We are especially indebted to Golan Levin, whose STUDIO for Creative Inquiry was the cradle which sparked and nurtured this endeavor, to Brad A. Myers for reference advice, and to the School of Design's Peter Scupelli and Austin S. Lee (former faculty) — whose fateful course inspired deeply. Cameron is especially thankful to Hugh Dubberly for sewing the phrase ‘Authoring Environment’ into his mind in 2017, to Paul Pangaro whose conversations forced progress, and to Max Krieger for knocking over the first domino.</p>
 
-We are especially indebted to Golan Levin, whose STUDIO for Creative Inquiry was the cradle which sparked and nurtured this endeavor, to Brad A. Myers for reference advice, and to the School of Design's Peter Scupelli and Austin S. Lee (former faculty) — whose fateful course inspired deeply. Cameron is especially thankful to Hugh Dubberly for sewing the phrase ‘Authoring Environment’ into his mind in 2017, to Paul Pangaro whose conversations forced progress, and to Max Krieger for knocking over the first domino.
+
     </p>
   </section>
 
@@ -214,58 +287,67 @@ We are especially indebted to Golan Levin, whose STUDIO for Creative Inquiry was
 
   <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a> 
   <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="<img src='cursor-chat.gif' />"</button></button>
-</div>
+  </div>
 
-  <!-- Citations -->
-  <section id="bib-sec-001"> 
-    <header> 
-     <div class="title-info"> 
-      <h2 class="page-brake-head"><span class="nav-open" role="button" onclick="openNav(this)" tabindex="0" title="article navigation">REFERENCES</span></h2> 
-     </div> 
-    </header> 
-    <ol class="bibUl"> 
-     <li id="bib1" label="[1]" value="1">Scott McCloud. 1994. Understanding Comics, Harper Collins, New York, New York. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 1" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib11" aria-label="citation 1 reference 1">citation 1</option></select></li> 
-     <li id="bib2" label="[2]" value="2">Viljami Salminen. 2017. On Design Tools and Processes. Retrieved January 2, 2020 from https://viljamis.com/2017/design-tools-processes <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 2" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib22" aria-label="citation 1 reference 2">citation 1</option></select></li> 
-     <li id="bib3" label="[3]" value="3">Casey Reas. Sketching with code. 2019. Tellart. Retrieved February 11, 2020 from https://www.tellart.com/projects/designnonfiction/#Casey_Reas <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 3" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib33" aria-label="citation 1 reference 3">citation 1</option></select></li> 
-     <li id="bib4" label="[4]" value="4">Brad A. Myers. 1990. Taxonomies of visual programming and program visualization.&nbsp;J. Vis. Lang. Comput.&nbsp;1, 1 (March 1990), 97-123. DOI=http://dx.doi.org/10.1016/S1045-926X(05)80036-9 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 4" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib44" aria-label="citation 1 reference 4">citation 1</option></select></li> 
-     <li id="bib5" label="[5]" value="5">Caitlin Kelleher and Randy Pausch. 2005. Lowering the barriers to programming: A taxonomy of programming environments and languages for novice programmers. ACM Comput. Surv. 37, 2 (June 2005), 83-137. DOI=http://dx.doi.org/10.1145/1089733.1089734 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 5" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib55" aria-label="citation 1 reference 5">citation 1</option></select></li> 
-     <li id="bib6" label="[6]" value="6">Mark Baskinger, William Bardel. <em>Drawing Ideas</em>. 2013. Random House Inc. New York, NY. P. 150. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 6" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib626" aria-label="citation 1 reference 6">citation 1</option></select></li> 
-     <li id="bib7" label="[7]" value="7">Sherry Turkle and Seymour Papert. 1992. Epistemological Pluralism and the Revaluation of the Concrete. Journal of Mathematical Behavior 11, 1 (March 1992). <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 7" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib733" aria-label="citation 1 reference 7">citation 1</option></select></li> 
-     <li id="bib8" label="[8]" value="8">Maks Surguy. 2018. Research essay: The History of Processing. Retrieved February 12, 2020 from https://maxoffsky.com/rearch/research-essay-the-history-of-processing <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 8" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib86" aria-label="citation 1 reference 8">citation 1</option></select></li> 
-     <li id="bib9" label="[9]" value="9">Lauren McCarthy, Casey Reas, Ben Fry. 2015. Getting Started with p5.js: Making Interactive Graphics in JavaScript and Processing, Chapter 1, Figure 1-3 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 9" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib97" aria-label="citation 1 reference 9">citation 1</option></select></li> 
-     <li id="bib10" label="[10]" value="10">Golan Levin. 2015. For Us, By Us. Eyeo Festival 5th Anniversary Book Introduction. http://www.flong.com/texts/essays/for-us-by-us <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 10" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib108" aria-label="citation 1 reference 10">citation 1</option></select></li> 
-     <li id="bib11" label="[11]" value="11">Casey Reas and Benjamin Fry. 2003. Processing: a learning environment for creating interactive Web graphics. In&nbsp;ACM SIGGRAPH 2003 Sketches &amp; Applications&nbsp;(SIGGRAPH '03). ACM, New York, NY, USA, 1-1. DOI: https://doi.org/10.1145/965400.965440 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 11" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib119" aria-label="citation 1 reference 11">citation 1</option></select></li> 
-     <li id="bib12" label="[12]" value="12">The Processing Foundation. Page on educational initiatives. Retrieved December 16, 2019 from https://processingfoundation.org/education <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 12" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1210" aria-label="citation 1 reference 12">citation 1</option></select></li> 
-     <li id="bib13" label="[13]" value="13">Processing. Page on Environment (IDE). Retrieved December 16, 2019 from https://processing.org/reference/environment/ <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 13" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1311" aria-label="citation 1 reference 13">citation 1</option></select></li> 
-     <li id="bib14" label="[14]" value="14">Lauren McCarthy. 2007. p5.js-editor. (January 2007). Retrieved January 2, 2020 from https://github.com/processing/p5.js-editor <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 14" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1412" aria-label="citation 1 reference 14">citation 1</option></select></li> 
-     <li id="bib15" label="[15]" value="15">Lauren McCarthy. 2019. p5.js-web-editor. Retrieved January 2, 2020 from https://github.com/processing/p5.js-web-editor <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 15" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1513" aria-label="citation 1 reference 15">citation 1</option></select></li> 
-     <li id="bib16" label="[16]" value="16">Olav Martin Kvern and&nbsp;Stephen F Roth. 1994. Real World FreeHand 4. Peachpit Press, Inc. Berkeley, CA. Page 31. Figure 1-25. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 16" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1616" aria-label="citation 1 reference 16">citation 1</option></select></li> 
-     <li id="bib17" label="[17]" value="17">Steven P. Dow, Alana Glassco, Jonathan Kass, Melissa Schwarz, Daniel L. Schwartz, and c. 2010. Parallel Prototyping leads to better design results, more divergence, and increased self-efficacy. ACM Trans. Comput.-Hum. Interact. 17, 4, Article 18 (December 2010), 24 pages. DOI=http://dx.doi.org/10.1145/1879831.1879836 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 17" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1725" aria-label="citation 1 reference 17">citation 1</option></select></li> 
-     <li id="bib18" label="[18]" value="18">Christopher F. Herot, Richard Carling, Mark Friedell, and David Kramlich. 1980. A prototype Spatial Data Management System. In&nbsp;Proceedings of the 7th annual conference on Computer graphics and interactive techniques&nbsp;(SIGGRAPH '80). ACM, New York, NY, USA, 63-70. DOI=http://dx.doi.org/10.1145/800250.807470 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 18" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1814" aria-label="citation 1 reference 18">citation 1</option></select></li> 
-     <li id="bib19" label="[19]" value="19">Ken Perlin and David Fox. 1993. Pad: an alternative approach to the computer interface. In Proceedings of the 20th annual conference on Computer graphics and interactive techniques (SIGGRAPH '93). ACM, New York, NY, USA, 57-64. DOI: https://doi.org/10.1145/166117.166125 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 19" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1915" aria-label="citation 1 reference 19">citation 1</option></select></li> 
-     <li id="bib20" label="[20]" value="20">Benjamin B. Bederson and James D. Hollan. 1994. Pad++: a zooming graphical interface for exploring alternate interface physics. In&nbsp;Proceedings of the 7th annual ACM symposium on User interface software and technology&nbsp;(UIST '94). ACM, New York, NY, USA, 17-26. DOI=http://dx.doi.org/10.1145/192426.192435</li> 
-     <li id="bib21" label="[21]" value="21">Adobe. Illustrator CS4 “What's New”. Retrieved December 16, 2019 from https://www.adobe.com/aboutadobe/pressroom/pressmaterials/pdfs/cs4_illustrator_whatsnew.pdf <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 21" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2117" aria-label="citation 1 reference 21">citation 1</option></select></li> 
-     <li id="bib22" label="[22]" value="22">Prezi. 2009. Prezi live graphic recording, 2009 Stanford, Howard Rheingold's social media class. Retrieved February 11, 2020 from https://www.youtube.com/watch?v=MZlgN4r5O7E <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 22" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2218" aria-label="citation 1 reference 22">citation 1</option></select></li> 
-     <li id="bib23" label="[23]" value="23">Pam Clark. Photoshop Blog. Adobe Launches the 2015 Release of Photoshop CC – with Major New Features for Designers (including Artboards). Retrieved February 11, 2020 from 7http://blogs.adobe.com/photoshop/2015/06/adobe-launches-the-2015-release-of-photoshop-cc.html <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 23" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2320" aria-label="citation 1 reference 23">citation 1</option></select></li> 
-     <li id="bib24" label="[24]" value="24">Khoi Vinh. 2015. Subtraction.com Design Tools Survey. Retrieved February 11, 2020 from http://tools.subtraction.com <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 24" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2419" aria-label="citation 1 reference 24">citation 1</option></select></li> 
-     <li id="bib25" label="[25]" value="25">Arew Shorten. Adobe Blog. Introducing Adobe Experience Design CC (Preview). (March 2016). Retrieved February 11, 2020 from https://theblog.adobe.com/introducing-adobe-experience-design-cc-preview <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 25" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2521" aria-label="citation 1 reference 25">citation 1</option></select></li> 
-     <li id="bib26" label="[26]" value="26">Robert DeLine, Mary Czerwinski, Brian Meyers, Gina Venolia, Steven Drucker, and George Robertson. 2006. Code Thumbnails: Using Spatial Memory to Navigate Source Code. In Proceedings of the Visual Languages and Human-Centric Computing (VLHCC ’06). IEEE Computer Society, USA, 11–18. DOI:https://doi.org/10.1109/VLHCC.2006.14 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 26" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2623" aria-label="citation 1 reference 26">citation 1</option></select></li> 
-     <li id="bib27" label="[27]" value="27">Dave Griffiths. Demonstration of ‘Scheme Bricks’ and ‘slub’ at PLEXUS4. Bartlett School of Architecture. University College London. (February 2013). Retrieved February 12, 2020 from https://vimeo.com/60543517#t=4675s</li> 
-     <li id="bib28" label="[28]" value="28">Mitchel Resnick, John Maloney, Andrés Monroy-Hernández, Natalie Rusk, Evelyn Eastmond, Karen Brennan, Amon Millner, Eric Rosenbaum, Jay Silver, Brian Silverman, and Yasmin Kafai. 2009. Scratch: programming for all. Commun. ACM 52, 11 (November 2009), 60-67. DOI: https://doi.org/10.1145/1592761.1592779 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 28" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2822" aria-label="citation 1 reference 28">citation 1</option></select></li> 
-     <li id="bib29" label="[29]" value="29">Andrew Bragdon, Robert Zeleznik, Steven P. Reiss, Suman Karumuri, William Cheung, Joshua Kaplan, Christopher Coleman, Ferdi Adeputra, and Joseph J. LaViola, Jr.. 2010. Code bubbles: a working set-based interface for code understanding and maintenance. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '10). ACM, New York, NY, USA, 2503-2512. DOI: https://doi.org/10.1145/1753326.1753706</li> 
-     <li id="bib30" label="[30]" value="30">Michael Terry and Elizabeth D. Mynatt. 2002. Recognizing creative needs in user interface design. In Proceedings of the 4th conference on Creativity &amp; cognition (C&amp;C '02). ACM, New York, NY, USA, 38-44. DOI=http://dx.doi.org/10.1145/581710.581718</li> 
-     <li id="bib31" label="[31]" value="31">Yasuhiro Yamamoto and Kumiyo Nakakoji. 2005. Interaction design of tools for fostering creativity in the early stages of information design. Int. J. Hum.-Comput. Stud. 63, 4–5 (October 2005), 513–535. DOI:https://doi.org/10.1016/j.ijhcs.2005.04.023 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 31" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3128" aria-label="citation 1 reference 31">citation 1</option></select></li> 
-     <li id="bib32" label="[32]" value="32">Michael Terry, Elizabeth D. Mynatt, Kumiyo Nakakoji, and Yasuhiro Yamamoto. 2004. Variation in element and action: supporting simultaneous development of alternative solutions. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI ’04). Association for Computing Machinery, New York, NY, USA, 711–718. DOI:https://doi.org/10.1145/985692.985782 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 32" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3229" aria-label="citation 1 reference 32">citation 1</option></select></li> 
-     <li id="bib33" label="[33]" value="33">Mitchel Resnick, Brad Myers, Kumiyo Nakakoji, Ben Shneiderman, Randy Pausch, Ted Selker, Mike Eisenberg. 2005. Design Principles for Tools to Support Creative Thinking. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 33" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3327" aria-label="citation 1 reference 33">citation 1</option><option value="#auto-bib3334" aria-label="citation 2 reference 33">citation 2</option></select></li> 
-     <li id="bib34" label="[34]" value="34">Steve Jobs, Steve Capps, Andy Hertzfeld, Randy Wigginton, Bill Atkinson, Bruce Horn, Burrell Smith, Owen Densmore, Rony Sebok. 1984. Boston Computer Society General Meeting. (30 January 1984) Retrieved February 11, 2020 from https://youtu.be/1tQ5XwvjPmA?t=2065 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 34" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3432" aria-label="citation 1 reference 34">citation 1</option></select></li> 
-     <li id="bib35" label="[35]" value="35">Kelly Rivers. 2019. Class Notes: Algorithmic Thinking. (January 2019). Retrieved January 4, 2020 from http://www.krivers.net/15112-s19/notes/notes-algorithmic-thinking.html <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 35" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3524" aria-label="citation 1 reference 35">citation 1</option></select></li> 
-     <li id="bib36" label="[36]" value="36">Björn Hartmann, Loren Yu, Abel Allison, Yeonsoo Yang, and Scott R. Klemmer. 2008. Design as exploration: creating interface alternatives through parallel authoring and runtime tuning. In Proceedings of the 21st annual ACM symposium on User interface software and technology (UIST ’08). Association for Computing Machinery, New York, NY, USA, 91–100. DOI:https://doi.org/10.1145/1449715.1449732 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 36" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3630" aria-label="citation 1 reference 36">citation 1</option></select></li> 
-     <li id="bib37" label="[37]" value="37">Lauren McCarthy. reference | draw. Retrieved January 4, 2020 from https://p5js.org/reference/#/p5/draw <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 37" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3735" aria-label="citation 1 reference 37">citation 1</option></select></li> 
-     <li id="bib38" label="[38]" value="38">Lauren McCarthy. reference | setup. Retrieved January 4, 2020 from https://p5js.org/reference/#/p5/setup <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 38" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3836" aria-label="citation 1 reference 38">citation 1</option></select></li> 
-     <li id="bib39" label="[39]" value="39">David Canfield Smith, Charles Irby, Ralph Kimball, Bill Verplank, and Eric Harslem. 1982. Designing the Star User Interface. Byte, no. 4. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 39" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3931" aria-label="citation 1 reference 39">citation 1</option></select></li> 
-    </ol> 
-   </section> 
-  </section> 
+  <div class="refs">
+    <div class="col-lg-6 offset-lg-2 main-body">
+
+      <!-- Citations -->
+      <section id="bib-sec-001"> 
+       <header> 
+        <div class="title-info"> 
+         <h3 class="page-brake-head"><span class="nav-open" role="button" onclick="openNav(this)" tabindex="0" title="article navigation" >References</span></h3> 
+        </div> 
+       </header> 
+       <ol class="bibUl"> 
+        <li id="bib1" label="[1]" value="1">Scott McCloud. 1994. Understanding Comics, Harper Collins, New York, New York. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 1" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib11" aria-label="citation 1 reference 1">citation 1</option></select></li> 
+        <li id="bib2" label="[2]" value="2">Viljami Salminen. 2017. On Design Tools and Processes. Retrieved January 2, 2020 from https://viljamis.com/2017/design-tools-processes <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 2" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib22" aria-label="citation 1 reference 2">citation 1</option></select></li> 
+        <li id="bib3" label="[3]" value="3">Casey Reas. Sketching with code. 2019. Tellart. Retrieved February 11, 2020 from https://www.tellart.com/projects/designnonfiction/#Casey_Reas <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 3" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib33" aria-label="citation 1 reference 3">citation 1</option></select></li> 
+        <li id="bib4" label="[4]" value="4">Brad A. Myers. 1990. Taxonomies of visual programming and program visualization.&nbsp;J. Vis. Lang. Comput.&nbsp;1, 1 (March 1990), 97-123. DOI=http://dx.doi.org/10.1016/S1045-926X(05)80036-9 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 4" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib44" aria-label="citation 1 reference 4">citation 1</option></select></li> 
+        <li id="bib5" label="[5]" value="5">Caitlin Kelleher and Randy Pausch. 2005. Lowering the barriers to programming: A taxonomy of programming environments and languages for novice programmers. ACM Comput. Surv. 37, 2 (June 2005), 83-137. DOI=http://dx.doi.org/10.1145/1089733.1089734 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 5" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib55" aria-label="citation 1 reference 5">citation 1</option></select></li> 
+        <li id="bib6" label="[6]" value="6">Mark Baskinger, William Bardel. <em>Drawing Ideas</em>. 2013. Random House Inc. New York, NY. P. 150. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 6" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib626" aria-label="citation 1 reference 6">citation 1</option></select></li> 
+        <li id="bib7" label="[7]" value="7">Sherry Turkle and Seymour Papert. 1992. Epistemological Pluralism and the Revaluation of the Concrete. Journal of Mathematical Behavior 11, 1 (March 1992). <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 7" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib733" aria-label="citation 1 reference 7">citation 1</option></select></li> 
+        <li id="bib8" label="[8]" value="8">Maks Surguy. 2018. Research essay: The History of Processing. Retrieved February 12, 2020 from https://maxoffsky.com/rearch/research-essay-the-history-of-processing <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 8" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib86" aria-label="citation 1 reference 8">citation 1</option></select></li> 
+        <li id="bib9" label="[9]" value="9">Lauren McCarthy, Casey Reas, Ben Fry. 2015. Getting Started with p5.js: Making Interactive Graphics in JavaScript and Processing, Chapter 1, Figure 1-3 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 9" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib97" aria-label="citation 1 reference 9">citation 1</option></select></li> 
+        <li id="bib10" label="[10]" value="10">Golan Levin. 2015. For Us, By Us. Eyeo Festival 5th Anniversary Book Introduction. http://www.flong.com/texts/essays/for-us-by-us <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 10" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib108" aria-label="citation 1 reference 10">citation 1</option></select></li> 
+        <li id="bib11" label="[11]" value="11">Casey Reas and Benjamin Fry. 2003. Processing: a learning environment for creating interactive Web graphics. In&nbsp;ACM SIGGRAPH 2003 Sketches &amp; Applications&nbsp;(SIGGRAPH '03). ACM, New York, NY, USA, 1-1. DOI: https://doi.org/10.1145/965400.965440 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 11" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib119" aria-label="citation 1 reference 11">citation 1</option></select></li> 
+        <li id="bib12" label="[12]" value="12">The Processing Foundation. Page on educational initiatives. Retrieved December 16, 2019 from https://processingfoundation.org/education <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 12" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1210" aria-label="citation 1 reference 12">citation 1</option></select></li> 
+        <li id="bib13" label="[13]" value="13">Processing. Page on Environment (IDE). Retrieved December 16, 2019 from https://processing.org/reference/environment/ <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 13" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1311" aria-label="citation 1 reference 13">citation 1</option></select></li> 
+        <li id="bib14" label="[14]" value="14">Lauren McCarthy. 2007. p5.js-editor. (January 2007). Retrieved January 2, 2020 from https://github.com/processing/p5.js-editor <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 14" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1412" aria-label="citation 1 reference 14">citation 1</option></select></li> 
+        <li id="bib15" label="[15]" value="15">Lauren McCarthy. 2019. p5.js-web-editor. Retrieved January 2, 2020 from https://github.com/processing/p5.js-web-editor <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 15" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1513" aria-label="citation 1 reference 15">citation 1</option></select></li> 
+        <li id="bib16" label="[16]" value="16">Olav Martin Kvern and&nbsp;Stephen F Roth. 1994. Real World FreeHand 4. Peachpit Press, Inc. Berkeley, CA. Page 31. Figure 1-25. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 16" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1616" aria-label="citation 1 reference 16">citation 1</option></select></li> 
+        <li id="bib17" label="[17]" value="17">Steven P. Dow, Alana Glassco, Jonathan Kass, Melissa Schwarz, Daniel L. Schwartz, and c. 2010. Parallel Prototyping leads to better design results, more divergence, and increased self-efficacy. ACM Trans. Comput.-Hum. Interact. 17, 4, Article 18 (December 2010), 24 pages. DOI=http://dx.doi.org/10.1145/1879831.1879836 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 17" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1725" aria-label="citation 1 reference 17">citation 1</option></select></li> 
+        <li id="bib18" label="[18]" value="18">Christopher F. Herot, Richard Carling, Mark Friedell, and David Kramlich. 1980. A prototype Spatial Data Management System. In&nbsp;Proceedings of the 7th annual conference on Computer graphics and interactive techniques&nbsp;(SIGGRAPH '80). ACM, New York, NY, USA, 63-70. DOI=http://dx.doi.org/10.1145/800250.807470 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 18" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1814" aria-label="citation 1 reference 18">citation 1</option></select></li> 
+        <li id="bib19" label="[19]" value="19">Ken Perlin and David Fox. 1993. Pad: an alternative approach to the computer interface. In Proceedings of the 20th annual conference on Computer graphics and interactive techniques (SIGGRAPH '93). ACM, New York, NY, USA, 57-64. DOI: https://doi.org/10.1145/166117.166125 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 19" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib1915" aria-label="citation 1 reference 19">citation 1</option></select></li> 
+        <li id="bib20" label="[20]" value="20">Benjamin B. Bederson and James D. Hollan. 1994. Pad++: a zooming graphical interface for exploring alternate interface physics. In&nbsp;Proceedings of the 7th annual ACM symposium on User interface software and technology&nbsp;(UIST '94). ACM, New York, NY, USA, 17-26. DOI=http://dx.doi.org/10.1145/192426.192435</li> 
+        <li id="bib21" label="[21]" value="21">Adobe. Illustrator CS4 “What's New”. Retrieved December 16, 2019 from https://www.adobe.com/aboutadobe/pressroom/pressmaterials/pdfs/cs4_illustrator_whatsnew.pdf <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 21" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2117" aria-label="citation 1 reference 21">citation 1</option></select></li> 
+        <li id="bib22" label="[22]" value="22">Prezi. 2009. Prezi live graphic recording, 2009 Stanford, Howard Rheingold's social media class. Retrieved February 11, 2020 from https://www.youtube.com/watch?v=MZlgN4r5O7E <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 22" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2218" aria-label="citation 1 reference 22">citation 1</option></select></li> 
+        <li id="bib23" label="[23]" value="23">Pam Clark. Photoshop Blog. Adobe Launches the 2015 Release of Photoshop CC – with Major New Features for Designers (including Artboards). Retrieved February 11, 2020 from 7http://blogs.adobe.com/photoshop/2015/06/adobe-launches-the-2015-release-of-photoshop-cc.html <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 23" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2320" aria-label="citation 1 reference 23">citation 1</option></select></li> 
+        <li id="bib24" label="[24]" value="24">Khoi Vinh. 2015. Subtraction.com Design Tools Survey. Retrieved February 11, 2020 from http://tools.subtraction.com <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 24" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2419" aria-label="citation 1 reference 24">citation 1</option></select></li> 
+        <li id="bib25" label="[25]" value="25">Arew Shorten. Adobe Blog. Introducing Adobe Experience Design CC (Preview). (March 2016). Retrieved February 11, 2020 from https://theblog.adobe.com/introducing-adobe-experience-design-cc-preview <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 25" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2521" aria-label="citation 1 reference 25">citation 1</option></select></li> 
+        <li id="bib26" label="[26]" value="26">Robert DeLine, Mary Czerwinski, Brian Meyers, Gina Venolia, Steven Drucker, and George Robertson. 2006. Code Thumbnails: Using Spatial Memory to Navigate Source Code. In Proceedings of the Visual Languages and Human-Centric Computing (VLHCC ’06). IEEE Computer Society, USA, 11–18. DOI:https://doi.org/10.1109/VLHCC.2006.14 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 26" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2623" aria-label="citation 1 reference 26">citation 1</option></select></li> 
+        <li id="bib27" label="[27]" value="27">Dave Griffiths. Demonstration of ‘Scheme Bricks’ and ‘slub’ at PLEXUS4. Bartlett School of Architecture. University College London. (February 2013). Retrieved February 12, 2020 from https://vimeo.com/60543517#t=4675s</li> 
+        <li id="bib28" label="[28]" value="28">Mitchel Resnick, John Maloney, Andrés Monroy-Hernández, Natalie Rusk, Evelyn Eastmond, Karen Brennan, Amon Millner, Eric Rosenbaum, Jay Silver, Brian Silverman, and Yasmin Kafai. 2009. Scratch: programming for all. Commun. ACM 52, 11 (November 2009), 60-67. DOI: https://doi.org/10.1145/1592761.1592779 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 28" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib2822" aria-label="citation 1 reference 28">citation 1</option></select></li> 
+        <li id="bib29" label="[29]" value="29">Andrew Bragdon, Robert Zeleznik, Steven P. Reiss, Suman Karumuri, William Cheung, Joshua Kaplan, Christopher Coleman, Ferdi Adeputra, and Joseph J. LaViola, Jr.. 2010. Code bubbles: a working set-based interface for code understanding and maintenance. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '10). ACM, New York, NY, USA, 2503-2512. DOI: https://doi.org/10.1145/1753326.1753706</li> 
+        <li id="bib30" label="[30]" value="30">Michael Terry and Elizabeth D. Mynatt. 2002. Recognizing creative needs in user interface design. In Proceedings of the 4th conference on Creativity &amp; cognition (C&amp;C '02). ACM, New York, NY, USA, 38-44. DOI=http://dx.doi.org/10.1145/581710.581718</li> 
+        <li id="bib31" label="[31]" value="31">Yasuhiro Yamamoto and Kumiyo Nakakoji. 2005. Interaction design of tools for fostering creativity in the early stages of information design. Int. J. Hum.-Comput. Stud. 63, 4–5 (October 2005), 513–535. DOI:https://doi.org/10.1016/j.ijhcs.2005.04.023 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 31" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3128" aria-label="citation 1 reference 31">citation 1</option></select></li> 
+        <li id="bib32" label="[32]" value="32">Michael Terry, Elizabeth D. Mynatt, Kumiyo Nakakoji, and Yasuhiro Yamamoto. 2004. Variation in element and action: supporting simultaneous development of alternative solutions. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI ’04). Association for Computing Machinery, New York, NY, USA, 711–718. DOI:https://doi.org/10.1145/985692.985782 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 32" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3229" aria-label="citation 1 reference 32">citation 1</option></select></li> 
+        <li id="bib33" label="[33]" value="33">Mitchel Resnick, Brad Myers, Kumiyo Nakakoji, Ben Shneiderman, Randy Pausch, Ted Selker, Mike Eisenberg. 2005. Design Principles for Tools to Support Creative Thinking. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 33" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3327" aria-label="citation 1 reference 33">citation 1</option><option value="#auto-bib3334" aria-label="citation 2 reference 33">citation 2</option></select></li> 
+        <li id="bib34" label="[34]" value="34">Steve Jobs, Steve Capps, Andy Hertzfeld, Randy Wigginton, Bill Atkinson, Bruce Horn, Burrell Smith, Owen Densmore, Rony Sebok. 1984. Boston Computer Society General Meeting. (30 January 1984) Retrieved February 11, 2020 from https://youtu.be/1tQ5XwvjPmA?t=2065 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 34" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3432" aria-label="citation 1 reference 34">citation 1</option></select></li> 
+        <li id="bib35" label="[35]" value="35">Kelly Rivers. 2019. Class Notes: Algorithmic Thinking. (January 2019). Retrieved January 4, 2020 from http://www.krivers.net/15112-s19/notes/notes-algorithmic-thinking.html <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 35" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3524" aria-label="citation 1 reference 35">citation 1</option></select></li> 
+        <li id="bib36" label="[36]" value="36">Björn Hartmann, Loren Yu, Abel Allison, Yeonsoo Yang, and Scott R. Klemmer. 2008. Design as exploration: creating interface alternatives through parallel authoring and runtime tuning. In Proceedings of the 21st annual ACM symposium on User interface software and technology (UIST ’08). Association for Computing Machinery, New York, NY, USA, 91–100. DOI:https://doi.org/10.1145/1449715.1449732 <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 36" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3630" aria-label="citation 1 reference 36">citation 1</option></select></li> 
+        <li id="bib37" label="[37]" value="37">Lauren McCarthy. reference | draw. Retrieved January 4, 2020 from https://p5js.org/reference/#/p5/draw <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 37" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3735" aria-label="citation 1 reference 37">citation 1</option></select></li> 
+        <li id="bib38" label="[38]" value="38">Lauren McCarthy. reference | setup. Retrieved January 4, 2020 from https://p5js.org/reference/#/p5/setup <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 38" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3836" aria-label="citation 1 reference 38">citation 1</option></select></li> 
+        <li id="bib39" label="[39]" value="39">David Canfield Smith, Charles Irby, Ralph Kimball, Bill Verplank, and Eric Harslem. 1982. Designing the Star User Interface. Byte, no. 4. <span class="link-das"> </span><select class="bib-ref-num" aria-label="Jump to citation for reference 39" style="display:inline-block;"><option>Navigate to</option><option value="#auto-bib3931" aria-label="citation 1 reference 39">citation 1</option></select></li> 
+       </ol> 
+   
+     </section> 
+  </div>
+  
+
+
+
+ 
 </body>
 
 <script>
