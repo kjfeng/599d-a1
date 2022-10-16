@@ -24,6 +24,26 @@ h6 {
     color: #555;
 }
 
+/* figures */
+figure {
+    margin: auto;
+}
+
+figure img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    padding: 10px 20px 10px 20px;
+}
+
+figure figcaption {
+    font-size: 10px;
+    font-style: italic;
+    color: rgb(128, 124, 124);
+    margin: auto;
+    padding: 2px 2px 2px 2px;
+}
+
 /* styling tooltip buttons */
 .btn-circle.btn-sm {
     width: 30px;
@@ -56,3 +76,7 @@ h6 {
     top: -1px;
 }
 
+img {
+    text-align: center;
+    max-width: 100%;
+}
