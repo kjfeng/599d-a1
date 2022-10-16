@@ -49,12 +49,12 @@ $(document).ready(function() {
     
     // Add lines between graphs and citations
     new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img1-pointer')), 
-                    document.getElementById('figure-group-1'));
+                    document.getElementById('figure-group-1'), {color: '#ffde0a'});
     new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img2-pointer')), 
-                    document.getElementById('figure-group-1'));
+                    document.getElementById('figure-group-1'), {color: '#ffde0a'});
     new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img3-pointer')), 
-                    document.getElementById('figure-group-1'));
+                    document.getElementById('figure-group-1'), {color: '#ffde0a'});
     new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img4-pointer')),
-                    document.getElementById('fn-img4')); 
+                    document.getElementById('fn-img4'), {color: '#ffde0a'}); 
 
 });
