@@ -22,4 +22,15 @@ $(document).ready(function() {
     });
 
     // $("section > h3").append("<hr/>");
+    
+    // Add lines between graphs and citations
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img1-pointer')), 
+                    document.getElementById('figure-group-1'));
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img2-pointer')), 
+                    document.getElementById('figure-group-1'));
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img3-pointer')), 
+                    document.getElementById('figure-group-1'));
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img4-pointer')),
+                    document.getElementById('fn-img4')); 
+
 });
