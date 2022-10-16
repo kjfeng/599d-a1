@@ -5,20 +5,44 @@ $(document).ready(function() {
             [<a class="bib" data-trigger="hover" data-toggle="popover" data-placement="top" href="#bib` + id + `" data-original-title="" title="">` + id + `</a>]`);
     });
 
-    $(".fn").click(function() {
+// $(".fn").click(function() {
+    //     let id = $(this).attr("id");
+    //     let fnClass = "." + id;
+    //     // highlight and fade fnclass element 
+    //     $(fnClass).css({backgroundColor: "#ffde0a"}).animate({backgroundColor: 'transparent'}, 1500);
+    //     return false;
+    // });
+
+    $(".fn").hover(function() {
         let id = $(this).attr("id");
         let fnClass = "." + id;
-        // highlight and fade fnclass element 
-        $(fnClass).css({backgroundColor: "#ffde0a"}).animate({backgroundColor: 'transparent'}, 1500);
-        return false;
+        // highlight fnclass element 
+        $(fnClass).css({backgroundColor: "#ffde0a"});
+    }, function() {
+        let id = $(this).attr("id");
+        let fnClass = "." + id;
+        // resolve fnclass element 
+        $(fnClass).css({backgroundColor: 'transparent'});
     });
 
-    $(".fn-img").click(function() {
+    // $(".fn-img").click(function() {
+    //     let id = $(this).attr("id");
+    //     let fnClass = "." + id;
+    //     // highlight and fade fnclass element 
+    //     $(fnClass).css({backgroundColor: "#ffde0a"}).animate({backgroundColor: 'transparent'}, 1500);
+    //     return false;
+    // });
+
+    $(".fn-img").hover(function() {
         let id = $(this).attr("id");
         let fnClass = "." + id;
-        // highlight and fade fnclass element 
-        $(fnClass).css({backgroundColor: "#ffde0a"}).animate({backgroundColor: 'transparent'}, 1500);
-        return false;
+        // highlight fnclass element 
+        $(fnClass).css({backgroundColor: "#ffde0a"});
+    }, function() {
+        let id = $(this).attr("id");
+        let fnClass = "." + id;
+        // resolve fnclass element 
+        $(fnClass).css({backgroundColor: 'transparent'});
     });
 
     // $("section > h3").append("<hr/>");

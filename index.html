@@ -132,14 +132,14 @@
       <h5>‘Arts-Engineering Toolkits’</h5>
       <p>1999, John Maeda created Design By Numbers (DBN) <span class="citation" id="8"></span> which subsequently morphed into Processing <span class="citation" id="9"></span> and laid the foundation for the contemporary “Creative Coding” movement <span class="citation" id="10"></span>. Over the successive two decades, Processing <span class="citation" id="11"></span> and later p5.js accumulated functionality and were nurtured with educational content <span class="citation" id="12"></span>. However, in terms of UI, none of DBN's descendants (e.g. Processing Development Environment <span class="citation" id="13"></span>, p5.js Desktop Editor <span class="citation" id="14"></span>, p5.js Web Editor <span class="citation" id="15"></span>) have advanced meaningfully beyond it.</p> 
 
-      <aside style="margin-top: 300px" class="fn-img6"> 
+      <aside style="margin-top: 330px" class="fn-img6"> 
         <figure>
         <img class="fn-img" src="./image6.png"/>
         <figcaption>Figure 6. ‘Illustrator Style’ Artboards act as ‘cropping-rectangles’ on top of the canvas but do not affect the organization of objects in the layer-list.</figcaption>
         </figure>
       </aside>
 
-      <aside style="margin-top: 570px" class="fn-img7"> 
+      <aside style="margin-top: 600px" class="fn-img7"> 
         <figure>
         <img class="fn-img" src="./image7.png"/>
         <figcaption>Figure 7. ‘Sketch Style’ Artboards are represented as containers in the layer-list, creating a ‘separation of concerns’; nesting objects by their position on the canvas.</figcaption>
@@ -181,22 +181,28 @@
 
   <section>
     <h3>Interface</h3>
-    <p>Stamper (prototype at p5stamper.com) is a programming environment that uses p5.js and Artboard-like objects called ‘Stamps’ (Figure 8) which sit atop a scrollable zooming canvas.
+
+    <aside style="margin-top: 50px" class="fn-img8"> 
+      <figure>
+      <img class="fn-img" src="./image8.png"/>
+      <figcaption>Figure 8. Anatomy of a Function Stamp: Function name field, optional parameters field, instructions box, Graphics Frame. Both the overall Stamp and Graphics Frame can be resized.</figcaption>
+      </figure>
+    </aside>
+
+    <p>Stamper (prototype at p5stamper.com) is a programming environment that uses p5.js and Artboard-like objects called ‘Stamps’ (<a  class="fn-img" id="fn-img8">Figure 8</a>) which sit atop a scrollable zooming canvas.
     </p>
 
-    
-  
 
-    <figure>
+    <!-- <figure>
       <img src="./image8.png"/>
       <figcaption>Figure 8. Anatomy of a Function Stamp: Function name field, optional parameters field, instructions box, Graphics Frame. Both the overall Stamp and Graphics Frame can be resized.</figcaption>
-    </figure>
+    </figure> -->
 
-    <aside class="fn2"><sup>2</sup>Programs are referred to as ‘Sketches’ in Processing and p5.js</aside>
     
-    <p>In a typical p5.js editor, the author only has a single graphics frame available to them while editing any one program<a class="fn" id="fn2" href=""><sup>2</sup></a>. If a p5.js program only uses the draw() function, there is a clear 1:1 mapping<a class="fn" id="fn3" href=""><sup>3</sup></a> between it and the visual output. However, once a user begins to use abstractions like helper functions, an invisible world–never witnessed directly–begins to emerge.</p>
+    
+    <p>In a typical p5.js editor, the author only has a single graphics frame available to them while editing any one program<a class="fn" id="fn2" ><sup>2</sup></a>. If a p5.js program only uses the draw() function, there is a clear 1:1 mapping<a class="fn" id="fn3" ><sup>3</sup></a> between it and the visual output. However, once a user begins to use abstractions like helper functions, an invisible world–never witnessed directly–begins to emerge.</p>
 
-    <aside class="fn3"><sup>3</sup>DBN reified this 1:1 mapping by eschewing functions entirely. All visual output was directly beside the code which specified it.</aside>
+    
 
     <p>In Stamper, we uncloak this invisible world by giving every function its own graphics frame. This design has multiple advantages:
       <ul>
@@ -205,28 +211,40 @@
       </ul>
     </p>
 
+    <aside class="fn2"><sup>2</sup>Programs are referred to as ‘Sketches’ in Processing and p5.js</aside>
+
     <p>In addition to visualizing all functions by automatically creating graphics frame contents (Figure 9), Stamper can visually render dependencies between Stamps on the canvas, which appear to the author as lines with arrowheads. There are three main types of lines:
+
+      <aside class="fn3"><sup>3</sup>DBN reified this 1:1 mapping by eschewing functions entirely. All visual output was directly beside the code which specified it.</aside>
+
       <ul>
         <li>Reference Lines indicate Variable usage and Function calls (e.g. Figure 10:5)</li>
-        <li>Architecture Lines indicate p5.js language behaviour (i.e. the line from preload() to Figure 10:A shows preload() will be bundled into Stamp A's Graphics Frame, similarly to in Figure 9)</li>
+        <li>Architecture Lines indicate p5.js language behaviour (i.e. the line from preload() to Figure 10:A shows preload() will be bundled into Stamp A's Graphics Frame, similarly to in <a class="fn-img" id="fn-img9">Figure 9</a>)</li>
         <li>File Lines visualize local assets being loaded into program variables (e.g. the line leaving the Stamp at Figure 10:E)</li>
       </ul>
     </p>
 
-    <figure>
+    <aside style="margin-top: 0px" class="fn-img9"> 
+      <figure>
+        <img class="fn-img" src="./image9.png"/>
+        <figcaption>Figure 9. Graphics frame contents are generated by collecting that Stamp's dependencies.</figcaption>
+      </figure>
+    </aside>
+
+    <!-- <figure>
       <img src="./image9.png"/>
       <figcaption>Figure 9. Graphics frame contents are generated by collecting that Stamp's dependencies.</figcaption>
-    </figure>
+    </figure> -->
 
-    <figure style="width: 100vw;
+    <!-- <figure style="width: 100vw;
     position: relative;
     left: 50%;  
     margin-left: -50vw;">
       <img src="./image10.png" style="width: 100%;"/>
       <figcaption class="container col-lg-6" style="width: 80%; margin: auto;">Figure 10. UI Key: (1) Layer List, (2) JavaScript importer, (3) Toolbar with buttons for adding Stamps, (4) Scrollable Zoomable Canvas, (5) Dependency Line indicating basicDot() is being called by draw(); Stamp Key: (A) Function Stamp, (B) Global Stamp with comment, (C) Global Stamp with Global Variable, (D) Console Stamp, (E) Media Stamp with local image asset, (F) Function Stamp with code obscured under its Graphics Frame</figcaption>
-    </figure>
+    </figure> -->
 
-    <p>To achieve our goal of rapid alternative creation (i.e. easy copying <span class="citation" id="39"></span>) we implemented the <i>Click + Option (⌥) Drag</i>interaction technique (Figure 11) which is widely used in WYSIWYG design software.</p>
+    <p>To achieve our goal of rapid alternative creation (i.e. easy copying <span class="citation" id="39"></span>) we implemented the <i>Click + Option (⌥) Drag</i> interaction technique (Figure 11) which is widely used in WYSIWYG design software.</p>
     
 
     <figure>
