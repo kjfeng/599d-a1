@@ -1,7 +1,9 @@
 .tooltip-inner {
     background-color: transparent !important;
-
 }
+/* .tooltip-inner {
+    background-color: #efefef !important;
+} */
 
 .tooltip.show {
     opacity: 1 !important;
@@ -136,7 +138,10 @@ aside {
     position: absolute;
     width: 7%;
     height: 7%;
+}
 
+.img-tooltip-area.full-width {
+    width: 5%;
 }
 
 .int-img-label {
@@ -145,3 +150,7 @@ aside {
     border-radius: 5px;
     padding: 3px
 }
+
+/* .tooltip-wrapper {
+    position: relative;
+} */
