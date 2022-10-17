@@ -138,3 +138,10 @@ aside {
     height: 7%;
 
 }
+
+.int-img-label {
+    color: white;
+    background-color: rgb(46, 98, 253);
+    border-radius: 5px;
+    padding: 3px
+}
