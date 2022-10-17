@@ -32,6 +32,7 @@ h6 {
 figure {
     margin: auto;
     margin-bottom: 2rem;
+    position: relative;
 }
 
 figure img {
@@ -129,4 +130,11 @@ aside {
 .fn-img {
     padding: 0 !important;
     width: 100% !important;
+}
+
+.img-tooltip-area {
+    position: absolute;
+    width: 7%;
+    height: 7%;
+
 }
