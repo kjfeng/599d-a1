@@ -110,6 +110,7 @@ select {
 
 .main-body {
     padding-bottom: 1rem;
+    max-width: 800px;
 }
 
 h3 {

@@ -56,5 +56,12 @@ $(document).ready(function() {
                     document.getElementById('figure-group-1'), {color: '#ffde0a'});
     new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img4-pointer')),
                     document.getElementById('fn-img4'), {color: '#ffde0a'}); 
-
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img6-pointer')),
+                    document.getElementById('fn-img6'), {color: '#ffde0a'});
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img7-pointer')),
+                    document.getElementById('fn-img7'), {color: '#ffde0a'});
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img8-pointer')),
+                    document.getElementById('fn-img8'), {color: '#ffde0a'});
+    new LeaderLine(LeaderLine.mouseHoverAnchor(document.getElementById('fn-img9-pointer')),
+                    document.getElementById('fn-img9'), {color: '#ffde0a'});
 });
