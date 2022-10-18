@@ -159,7 +159,6 @@ aside {
     margin-left: -15rem;
 }
 
-.tt-1-4.tooltip > .arrow {
-    left: 50% !important;
-    transform: translateX(-50%);
+.tt-1-4 {
+    margin-left: -200px;
 }
