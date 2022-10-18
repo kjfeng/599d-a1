@@ -89,7 +89,7 @@
   <section>
     <h3>Introduction</h3>
 
-    <aside class="fn1"><sup>1</sup>Sometimes known as ‘Thumbnail Sketches’ or ‘Panels’</aside>
+    <aside class="fn1 fn-text"><sup>1</sup>Sometimes known as ‘Thumbnail Sketches’ or ‘Panels’</aside>
 
     <aside style="margin-top: 70px" class="fn-img4"> 
       <figure>
@@ -167,7 +167,7 @@
   </section>
 
   
-  <aside style="float: left; width: 15rem; margin-left: -15rem;">
+  <aside class="fn-text">
     <p><b>How p5.js Works</b><br>p5.js programs have two essential functions: setup() and draw()</p>
     <p>“The setup() function is called once when the program starts. It's used to define initial environment properties such as screen size and background color” <span class="citation" id="37"></p>
     <p>Draw() is “called directly after setup()” and “continuously executes the lines of code contained inside its block until the program is stopped” <span class="citation" id="38"></p>
@@ -247,11 +247,11 @@
     </figure> -->
 
     
-    <aside class="fn2" style="float: left; width: 15rem; margin-left: -15rem; margin-top: 0px"><sup>2</sup>Programs are referred to as ‘Sketches’ in Processing and p5.js</aside>
+    <aside class="fn2 fn-text"><sup>2</sup>Programs are referred to as ‘Sketches’ in Processing and p5.js</aside>
 
     <p>In a typical p5.js editor, the author only has a single graphics frame available to them while editing any one program<a class="fn" id="fn2" ><sup>2</sup></a>. If a p5.js program only uses the draw() function, there is a clear 1:1 mapping<a class="fn" id="fn3" ><sup>3</sup></a> between it and the visual output. However, once a user begins to use abstractions like helper functions, an invisible world–never witnessed directly–begins to emerge.</p>
 
-    <aside class="fn3" style="float: left; width: 15rem; margin-left: -15rem; margin-top: 0px"><sup>3</sup>DBN reified this 1:1 mapping by eschewing functions entirely. All visual output was directly beside the code which specified it.</aside>
+    <aside class="fn3 fn-text"><sup>3</sup>DBN reified this 1:1 mapping by eschewing functions entirely. All visual output was directly beside the code which specified it.</aside>
 
     <p>In Stamper, we uncloak this invisible world by giving every function its own graphics frame. This design has multiple advantages:
       <ul>
@@ -263,13 +263,13 @@
     
     <p>In addition to visualizing all functions by automatically creating graphics frame contents (Figure 9), Stamper can visually render dependencies between Stamps on the canvas, which appear to the author as lines with arrowheads. There are three main types of lines:
     
-      <aside class="fn2" style="float: left; width: 15rem; margin-left: -15rem; margin-top: 0px">
-        See <a href="#int-fig-1"><span class="int-img-label">Interactive Figure 1</span></a> for details. Also see <a href="https://p5stamper.com" target="_blank" rel="noopener">p5stamper.com</a> for a live demo.
+      <aside class="fn-text" style="float: left; width: 15rem; margin-left: -15rem; margin-top: 0px">
+        Also see <a href="https://p5stamper.com" target="_blank" rel="noopener">p5stamper.com</a> for a live demo.
       </aside>
       <ul>
-        <li>Reference Lines indicate Variable usage and Function calls (e.g. Figure 10:5)</li>
-        <li>Architecture Lines indicate p5.js language behaviour (i.e. the line from preload() to Figure 10:A shows preload() will be bundled into Stamp A's Graphics Frame, similarly to in <a class="fn-img" id="fn-img9">Figure 9</a>)</li>
-        <li>File Lines visualize local assets being loaded into program variables (e.g. the line leaving the Stamp at Figure 10:E)</li>
+        <li>Reference Lines indicate Variable usage and Function calls (e.g. <a href="#int-fig-1"><span class="int-img-label">Interactive Figure 1</span></a>:5)</li>
+        <li>Architecture Lines indicate p5.js language behaviour (i.e. the line from preload() to <a href="#int-fig-1"><span class="int-img-label">Interactive Figure 1</span></a>:A shows preload() will be bundled into Stamp A's Graphics Frame, similarly to in <a class="fn-img" id="fn-img9">Figure 9</a>)</li>
+        <li>File Lines visualize local assets being loaded into program variables (e.g. the line leaving the Stamp at <a href="#int-fig-1"><span class="int-img-label">Interactive Figure 1</span></a>:E)</li>
       </ul>
     </p>
 
@@ -290,7 +290,7 @@
     left: 50%;  
     margin-left: -50vw;">
       <img src="./image10.png" style="width: 100%;"/>
-      <figcaption class="container col-lg-6" style="width: 80%; margin: auto;">Figure 10. UI Key: (1) Layer List, (2) JavaScript importer, (3) Toolbar with buttons for adding Stamps, (4) Scrollable Zoomable Canvas, (5) Dependency Line indicating basicDot() is being called by draw(); Stamp Key: (A) Function Stamp, (B) Global Stamp with comment, (C) Global Stamp with Global Variable, (D) Console Stamp, (E) Media Stamp with local image asset, (F) Function Stamp with code obscured under its Graphics Frame</figcaption>
+      <figcaption class="container col-lg-6" style="width: 80%; margin: auto;"><a href="#int-fig-1"><span class="int-img-label">Interactive Figure 1</span></a>. UI Key: (1) Layer List, (2) JavaScript importer, (3) Toolbar with buttons for adding Stamps, (4) Scrollable Zoomable Canvas, (5) Dependency Line indicating basicDot() is being called by draw(); Stamp Key: (A) Function Stamp, (B) Global Stamp with comment, (C) Global Stamp with Global Variable, (D) Console Stamp, (E) Media Stamp with local image asset, (F) Function Stamp with code obscured under its Graphics Frame</figcaption>
     </figure> -->
 
 
@@ -300,7 +300,7 @@
     
 
     <figure id="int-fig-3">
-      <img src="./int-img-3.png" style="width: 50%; height: auto"/>
+      <img src="./int-img-3.png" style="width: 70%; height: auto"/>
       <figcaption><span class="int-img-label">Interactive Figure 3</span>  Similarly to in other design software, Stamper allows spatial-object duplication <span class="citation" id="34"></span>. Hover over the markers to learn more about how to duplicate a stamp.</figcaption>
 
       <button type="button" class="btn btn-circle img-tooltip-area" data-toggle="tooltip" data-placement="top" style="left: 44%; top: 1.5%" title="<img src='3-1.png' />"> </button>
@@ -329,7 +329,7 @@
 
       P3, a former design student who now works as creative technologist, said about his day-to-day work “The issue of working through the keyhole [is] a problem all the time, I'm always looking at the console”. Along the same vein, P5, a former engineering and art student, said of Stamper that it “allows [her] to see the visuals that are generated by specific bits of code instead of everything at the same time”.
 
-      <aside class="fn4" style="float: left; width: 15rem; margin-left: -15rem;"><sup>4</sup>Note that our interviews were conducted before we added dependency visualizing lines, which may alleviate P2’s concern.</aside>
+      <aside class="fn4 fn-text" style="float: left; width: 15rem; margin-left: -15rem;"><sup>4</sup>Note that our interviews were conducted before we added dependency visualizing lines, which may alleviate P2’s concern.</aside>
 
       P2 expected Stamper to become tedious if they called one function in many places and then later had to change it because “I would have to go find all those other places”.<a class="fn" id="fn4" ><sup>4</sup></a> Another problem that was uniformly highlighted was performance, with every interviewee emphasizing that Stamper was irritatingly slow.
     </p>
@@ -354,8 +354,7 @@
   </section>
 
 
-  <a href="#" data-toggle="tooltip" title="Hooray!">Hover over me</a> 
-    <button type="button" class="btn " data-toggle="tooltip" data-placement="top" title="<img src='cursor-chat.gif' />"</button></button>
+  
   </div>
 
   <div class="refs">
