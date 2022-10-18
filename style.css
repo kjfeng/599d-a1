@@ -159,6 +159,7 @@ aside {
     margin-left: -15rem;
 }
 
-/* .tooltip-wrapper {
-    position: relative;
-} */
+.tt-1-4.tooltip > .arrow {
+    left: 50% !important;
+    transform: translateX(-50%);
+}
